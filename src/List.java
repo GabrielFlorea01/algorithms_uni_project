@@ -21,7 +21,19 @@ public class List {
         }
     }
 
-    public static void main(String[] args) {
+    // Afisam elementele listei intr-un format usor de citit.
+
+    public static void displayList(LinkedList<Integer> list) {
+        if (list.isEmpty()) {
+            System.out.println("Lista este goala!");
+            return;
+        }
+        StringJoiner joiner = new StringJoiner(" -> ");
+        list.forEach(num -> joiner.add(num.toString()));
+        System.out.println(joiner);
+    }
+
+        public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
 
         Scanner scanner = new Scanner(System.in);
@@ -49,17 +61,4 @@ public class List {
         displayList(list);
         scanner.close();
     }
-
-    // Afisam elementele listei intr-un format usor de citit.
-
-    public static void displayList(LinkedList<Integer> list) {
-        if (list.isEmpty()) {
-            System.out.println("Lista este goală!");
-            return;
-        }
-        StringJoiner joiner = new StringJoiner(" -> ");
-        list.forEach(num -> joiner.add(num.toString()));
-        System.out.println(joiner);
-    }
-
 }
